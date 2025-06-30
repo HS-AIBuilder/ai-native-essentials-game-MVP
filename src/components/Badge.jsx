@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Badge() {
+function Badge({ totalQuestions }) {
   return (
     <div className="badge-container">
       <div className="badge-completion-header">
@@ -22,9 +22,12 @@ function Badge() {
       
       <div className="mentor-completion-message">
         <div className="completion-quote">
+          <p className="completion-message">
+            You've completed Level 1 – Prompting Fundamentals. You've earned the Clarity Seeker badge.
+          </p>
           <p className="badge-message">
-            "<strong>Well done, Builder.</strong> You have taken your first step toward precision. 
-            The Clarity Seeker badge is yours—earned through focus and intention."
+            "<strong>Well done, Builder.</strong> You have mastered the foundations of precision. 
+            Through {totalQuestions} challenges, you've proven your commitment to clarity and intent."
           </p>
           <p className="mentor-closing">
             "Remember: <em>Every great prompt begins with a clear purpose.</em> 
@@ -33,6 +36,15 @@ function Badge() {
         </div>
         <div className="mentor-signature">
           <small>— Clarity Prime, Mentor of Precision</small>
+        </div>
+        
+        <div className="completion-actions">
+          <button className="share-badge-button" onClick={() => alert('Share functionality coming soon!')}>
+            🏆 Share your badge
+          </button>
+          <p className="prototype-note">
+            <small>Share feature is non-functional in this prototype</small>
+          </p>
         </div>
       </div>
     </div>
