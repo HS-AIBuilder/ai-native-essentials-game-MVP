@@ -39,12 +39,6 @@ function LevelSelection({ onLevelSelect, onBackToMenu }) {
             <h1 className="main-title">AI-Native Essentials</h1>
             <p className="subtitle">Choose your learning path and master AI-powered skills</p>
           </div>
-          
-          {/* Back Button */}
-          <button className="back-button" onClick={onBackToMenu}>
-            <span className="back-icon">←</span>
-            <span className="back-text">Back to Menu</span>
-          </button>
         </div>
       </div>
 

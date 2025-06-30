@@ -133,12 +133,12 @@ export const levelsConfig = [
 
 export const getUserProgress = () => {
   // In a real app, this would come from user data/API
-  // For MVP, simulate Level 1 completed
+  // For MVP, simulate fresh start with Level 1 available
   return {
-    completedLevels: [1], // User has completed Level 1
-    currentLevel: 2, // Next available level (though locked in MVP)
-    totalBadges: 1,
-    overallProgress: 10 // 1 out of 10 levels = 10%
+    completedLevels: [], // No levels completed yet
+    currentLevel: 1, // Level 1 is available to start
+    totalBadges: 0, // No badges earned yet
+    overallProgress: 0 // 0% complete - fresh start
   };
 };
 

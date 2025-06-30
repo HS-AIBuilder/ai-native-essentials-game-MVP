@@ -686,7 +686,13 @@ function App() {
             {!gameComplete ? (
               <div className="quiz-section">
                 <div className="level-header">
-                  <h3>Level 1: Prompting Fundamentals</h3>
+                  <div className="level-header-top">
+                    <button className="back-to-levels-button" onClick={handleBackToLevelSelection}>
+                      <span className="back-icon">←</span>
+                      <span className="back-text">Level Selection</span>
+                    </button>
+                    <h3>Level 1: Prompting Fundamentals</h3>
+                  </div>
                   <div className="progress-bar">
                     <div className="progress-fill" style={{ width: `${getProgressPercentage()}%` }}></div>
                   </div>

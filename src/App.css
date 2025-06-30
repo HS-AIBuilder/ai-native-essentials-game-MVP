@@ -47,14 +47,53 @@
   text-align: center;
 }
 
+.level-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.back-to-levels-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--secondary-accent);
+  color: var(--secondary-accent);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.back-to-levels-button:hover {
+  background: var(--secondary-accent);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 16px rgba(79, 224, 240, 0.4);
+}
+
+.back-to-levels-button .back-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .level-header h3 {
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   font-size: 24px;
   font-weight: 700;
   color: var(--highlight-accent);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: var(--font-secondary);
+  flex: 1;
 }
 
 .progress-bar {
@@ -1587,6 +1626,17 @@
   .level-header h3 {
     font-size: 20px;
   }
+
+  .level-header-top {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .back-to-levels-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 12px;
+  }
   
   .completion-message {
     font-size: 18px;
@@ -1751,6 +1801,17 @@
   
   .level-header h3 {
     font-size: 18px;
+  }
+
+  .level-header-top {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .back-to-levels-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 11px;
   }
   
   .completion-message {
