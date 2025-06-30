@@ -1,5 +1,6 @@
 {
   "name": "ai-native-essentials-game-mvp",
+  "homepage": "https://HS-AIBuilder.github.io/ai-native-essentials-game-MVP",
   "version": "1.0.0",
   "description": "Interactive quiz game prototype for AI-Native Essentials",
   "main": "index.js",
