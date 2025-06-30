@@ -71,21 +71,20 @@
   z-index: 100;
 }
 
-/* Intro Message from Clarity Prime */
-.intro-message {
+/* Mentor Introduction Section */
+.mentor-introduction {
   background: rgba(31, 214, 226, 0.1);
   border: 2px solid var(--highlight-accent);
   color: var(--primary-text);
   padding: 2.5rem;
   border-radius: 16px;
   margin: 2rem 0;
-  text-align: center;
   box-shadow: var(--card-shadow);
   position: relative;
   overflow: hidden;
 }
 
-.intro-message::before {
+.mentor-introduction::before {
   content: '';
   position: absolute;
   top: 0;
@@ -95,25 +94,128 @@
   background: linear-gradient(90deg, var(--highlight-accent), var(--secondary-accent));
 }
 
-.intro-message h2 {
-  margin: 0 0 1.5rem 0;
-  font-size: 28px;
+/* Mentor Header with Avatar and Title */
+.mentor-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(31, 214, 226, 0.3);
+}
+
+.mentor-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--highlight-accent), var(--secondary-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 16px rgba(31, 214, 226, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.mentor-symbol {
+  font-size: 36px;
+  color: #000000;
+  font-weight: bold;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mentor-title {
+  text-align: left;
+}
+
+.mentor-title h2 {
+  margin: 0;
+  font-size: 32px;
   font-weight: 800;
   font-family: var(--font-secondary);
   text-transform: uppercase;
   color: var(--highlight-accent);
   letter-spacing: 1px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
-.intro-message p {
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.75;
+.mentor-subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 16px;
+  color: var(--secondary-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+/* Mentor Message Content */
+.mentor-message {
+  text-align: left;
+}
+
+.prototype-notice {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prototype-notice small {
+  color: var(--secondary-accent);
   font-weight: 500;
-  opacity: 0.95;
-  max-width: 600px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.message-content {
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.message-content p {
+  margin: 0 0 1.25rem 0;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--primary-text);
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+.opening-line {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: var(--highlight-accent) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.call-to-action {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: var(--secondary-accent) !important;
+  text-align: center !important;
+  margin-top: 1.5rem !important;
+}
+
+.message-content strong {
+  color: var(--highlight-accent);
+  font-weight: 700;
+}
+
+.message-content em {
+  color: var(--secondary-accent);
+  font-style: italic;
+  font-weight: 600;
 }
 
 /* Question Container */
@@ -214,17 +316,85 @@
   box-shadow: var(--card-shadow);
 }
 
+/* Mentor Feedback */
+.mentor-feedback {
+  margin-bottom: 2rem;
+}
+
+.mentor-feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(31, 214, 226, 0.2);
+}
+
+.mentor-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--highlight-accent), var(--secondary-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 8px rgba(31, 214, 226, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.mentor-avatar-small .mentor-symbol {
+  font-size: 18px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.mentor-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mentor-name strong {
+  color: var(--highlight-accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feedback-tone {
+  font-size: 12px;
+  color: var(--secondary-accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
 .feedback-text {
   color: var(--primary-text);
   font-size: 18px;
   line-height: 1.75;
-  margin-bottom: 2rem;
   font-weight: 500;
+  font-style: italic;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 4px solid var(--highlight-accent);
+  position: relative;
 }
 
-.feedback-text strong {
+.feedback-text::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 3rem;
   color: var(--highlight-accent);
-  font-weight: 700;
+  opacity: 0.3;
+  font-family: serif;
+  line-height: 1;
 }
 
 /* Next Button */
@@ -272,7 +442,6 @@
 
 /* Badge Completion Screen */
 .badge-container {
-  text-align: center;
   padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -300,9 +469,48 @@
   50% { opacity: 0.5; }
 }
 
+/* Badge Completion Header */
+.badge-completion-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(31, 214, 226, 0.3);
+}
+
+.completion-title {
+  text-align: left;
+}
+
+.completion-title h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--highlight-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.completion-title p {
+  margin: 0.5rem 0 0 0;
+  font-size: 16px;
+  color: var(--secondary-accent);
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Badge Award Section */
+.badge-award {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .badge-icon {
   font-size: 100px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: block;
   filter: drop-shadow(0px 4px 8px rgba(79, 224, 240, 0.5));
   animation: pulse 2s ease-in-out infinite;
@@ -317,21 +525,80 @@
   font-size: 36px;
   font-weight: 800;
   color: var(--highlight-accent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   font-family: var(--font-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.2;
 }
 
-.badge-message {
-  font-size: 20px;
-  color: var(--primary-text);
-  line-height: 1.75;
-  max-width: 600px;
+/* Mentor Completion Message */
+.mentor-completion-message {
+  text-align: left;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.completion-quote {
+  padding: 1.5rem 2rem;
+  background: rgba(31, 214, 226, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid var(--highlight-accent);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.completion-quote::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 3rem;
+  color: var(--highlight-accent);
+  opacity: 0.3;
+  font-family: serif;
+  line-height: 1;
+}
+
+.badge-message {
+  font-size: 18px;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
   font-weight: 500;
-  opacity: 0.95;
+  font-style: italic;
+}
+
+.mentor-closing {
+  font-size: 17px;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.badge-message strong, .mentor-closing strong {
+  color: var(--highlight-accent);
+  font-weight: 700;
+}
+
+.mentor-closing em {
+  color: var(--secondary-accent);
+  font-weight: 600;
+}
+
+.mentor-signature {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.mentor-signature small {
+  color: var(--secondary-accent);
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  opacity: 0.8;
 }
 
 /* Responsive Design */
@@ -344,15 +611,42 @@
     padding: 1.5rem;
   }
   
-  .intro-message {
+  .mentor-introduction {
     padding: 2rem 1.5rem;
   }
   
-  .intro-message h2 {
+  .mentor-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .mentor-title h2 {
     font-size: 24px;
   }
   
-  .intro-message p {
+  .mentor-title {
+    text-align: center;
+  }
+  
+  .message-content p {
+    font-size: 16px;
+  }
+  
+  .opening-line {
+    font-size: 18px !important;
+  }
+  
+  .mentor-feedback-header {
+    gap: 0.75rem;
+  }
+  
+  .mentor-avatar-small {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .mentor-avatar-small .mentor-symbol {
     font-size: 16px;
   }
   
@@ -378,6 +672,20 @@
     padding: 2rem 1.5rem;
   }
   
+  .badge-completion-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .completion-title {
+    text-align: center;
+  }
+  
+  .completion-title h3 {
+    font-size: 20px;
+  }
+  
   .badge-title {
     font-size: 28px;
   }
@@ -386,8 +694,12 @@
     font-size: 80px;
   }
   
-  .badge-message {
-    font-size: 18px;
+  .badge-message, .mentor-closing {
+    font-size: 16px;
+  }
+  
+  .completion-quote {
+    padding: 1.25rem 1.5rem;
   }
   
   .prototype-banner {
@@ -405,11 +717,49 @@
     padding: 1.25rem;
   }
   
-  .intro-message h2 {
+  .mentor-introduction {
+    padding: 1.5rem 1rem;
+  }
+  
+  .mentor-title h2 {
     font-size: 20px;
   }
   
+  .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .mentor-symbol {
+    font-size: 28px;
+  }
+  
+  .message-content p {
+    font-size: 15px;
+  }
+  
+  .opening-line {
+    font-size: 16px !important;
+  }
+  
+  .call-to-action {
+    font-size: 17px !important;
+  }
+  
   .question-title {
+    font-size: 18px;
+  }
+  
+  .feedback-text {
+    font-size: 16px;
+    padding: 1rem;
+  }
+  
+  .badge-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .completion-title h3 {
     font-size: 18px;
   }
   
@@ -419,5 +769,13 @@
   
   .badge-icon {
     font-size: 60px;
+  }
+  
+  .badge-message, .mentor-closing {
+    font-size: 15px;
+  }
+  
+  .completion-quote {
+    padding: 1rem;
   }
 } 

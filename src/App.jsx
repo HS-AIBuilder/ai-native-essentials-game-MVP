@@ -5,7 +5,7 @@ import Question from './components/Question'
 import Badge from './components/Badge'
 import './App.css'
 
-// Quiz data
+// Quiz data with Clarity Prime's dynamic feedback
 const questions = [
   {
     id: 1,
@@ -18,10 +18,22 @@ const questions = [
     ],
     correctAnswer: 2,
     feedback: [
-      "Too vague - this doesn't specify what kind of code or context.",
-      "Better, but still lacks specificity about language, quantity, or purpose.",
-      "Excellent! This prompt is specific about language (JavaScript), quantity (3), topic (array manipulation), and format (with comments).",
-      "Very general - doesn't give the AI enough context to provide useful help."
+      {
+        message: "Builder, this lacks precision. 'Write code' tells the AI nothing about what you need. Specificity is power - without it, you get chaos.",
+        tone: "corrective"
+      },
+      {
+        message: "Better direction, but still unfocused. You're asking for 'some' examples - how many? What language? What purpose? The machine needs blueprints, not suggestions.",
+        tone: "improving"
+      },
+      {
+        message: "Excellent! Now THIS is precision in action. Language specified. Quantity defined. Topic clear. Format requested. You've given the AI everything it needs to serve you well.",
+        tone: "success"
+      },
+      {
+        message: "Too general, Builder. 'Help with programming' could mean anything. The AI cannot read your mind - it can only follow your instructions. Be specific.",
+        tone: "corrective"
+      }
     ]
   },
   {
@@ -35,10 +47,22 @@ const questions = [
     ],
     correctAnswer: 1,
     feedback: [
-      "While brevity can be good, overly short prompts often lack necessary context.",
-      "Perfect! Clear context, specific requirements, and format expectations help AI provide exactly what you need.",
-      "Technical jargon can actually confuse the AI if not used appropriately.",
-      "Multiple unrelated questions can lead to unfocused, incomplete responses."
+      {
+        message: "No, Builder. Brevity without clarity is just confusion compressed. The shortest path isn't always the clearest path. Give the AI what it needs to succeed.",
+        tone: "corrective"
+      },
+      {
+        message: "Perfect! You understand the principle. Context gives direction. Requirements define success. Format ensures usability. This is how you lead the machine with intention.",
+        tone: "success"
+      },
+      {
+        message: "Complexity for its own sake is the enemy of clarity. Use precise language, yes - but jargon without purpose creates barriers, not bridges.",
+        tone: "corrective"
+      },
+      {
+        message: "Scattered focus yields scattered results. One clear ask, one clear answer. Multiple questions dilute your power and confuse your purpose.",
+        tone: "corrective"
+      }
     ]
   }
 ]

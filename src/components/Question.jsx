@@ -40,11 +40,22 @@ function Question({ question, selectedAnswer, showFeedback, onAnswerSelect, onNe
 
       {showFeedback && (
         <div className="feedback-section">
-          <div className="feedback-text">
-            <strong>Clarity Prime says:</strong> {question.feedback[selectedAnswer]}
+          <div className="mentor-feedback">
+            <div className="mentor-feedback-header">
+              <div className="mentor-avatar-small">
+                <span className="mentor-symbol">⚡</span>
+              </div>
+              <div className="mentor-name">
+                <strong>Clarity Prime</strong>
+                <span className="feedback-tone">{question.feedback[selectedAnswer].tone}</span>
+              </div>
+            </div>
+            <div className="feedback-text">
+              "{question.feedback[selectedAnswer].message}"
+            </div>
           </div>
           <button className="next-button" onClick={onNext}>
-            Continue →
+            Continue Training →
           </button>
         </div>
       )}
