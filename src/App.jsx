@@ -3,6 +3,7 @@ import PrototypeBanner from './components/PrototypeBanner'
 import IntroMessage from './components/IntroMessage'
 import Question from './components/Question'
 import LevelCompletion from './components/LevelCompletion'
+import LevelSelection from './components/LevelSelection'
 import './App.css'
 
 // Level 1: Prompting Fundamentals - 20 Questions
@@ -621,6 +622,8 @@ const questions = [
 ]
 
 function App() {
+  const [currentView, setCurrentView] = useState('levelSelection') // 'levelSelection' or 'quiz'
+  const [selectedLevel, setSelectedLevel] = useState(null)
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState([])
   const [showFeedback, setShowFeedback] = useState(false)
@@ -651,45 +654,69 @@ function App() {
     return Math.round(((currentQuestion + (showFeedback ? 1 : 0)) / questions.length) * 100)
   }
 
+  // Navigation functions
+  const handleLevelSelect = (levelNumber) => {
+    setSelectedLevel(levelNumber)
+    setCurrentView('quiz')
+    setCurrentQuestion(0)
+    setSelectedAnswers([])
+    setShowFeedback(false)
+    setGameComplete(false)
+  }
+
+  const handleBackToLevelSelection = () => {
+    setCurrentView('levelSelection')
+    setSelectedLevel(null)
+  }
+
   return (
     <div className="app">
       <PrototypeBanner />
       
       <div className="game-container">
-        <IntroMessage />
-        
-        {!gameComplete ? (
-          <div className="quiz-section">
-            <div className="level-header">
-              <h3>Level 1: Prompting Fundamentals</h3>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: `${getProgressPercentage()}%` }}></div>
-              </div>
-              <div className="progress-indicator">
-                Question {currentQuestion + 1} of {questions.length} • {getProgressPercentage()}% Complete
-              </div>
-              <div className="category-badge">
-                {getCurrentQuestion().category}
-              </div>
-            </div>
-            
-            <Question
-              question={getCurrentQuestion()}
-              selectedAnswer={getSelectedAnswer()}
-              showFeedback={showFeedback}
-              onAnswerSelect={handleAnswerSelect}
-              onNext={handleNextQuestion}
-            />
-          </div>
-        ) : (
-          <LevelCompletion 
-            badgeTitle="Clarity Seeker"
-            mentorName="Clarity Prime"
-            closingMessage="Clarity is your superpower. Carry it into every prompt, every build, every breakthrough."
-            shareable={true}
-            totalQuestions={questions.length}
-            levelTitle="Level 1 – Prompting Fundamentals"
+        {currentView === 'levelSelection' ? (
+          <LevelSelection 
+            onLevelSelect={handleLevelSelect}
+            onBackToMenu={handleBackToLevelSelection}
           />
+        ) : (
+          <>
+            <IntroMessage />
+            
+            {!gameComplete ? (
+              <div className="quiz-section">
+                <div className="level-header">
+                  <h3>Level 1: Prompting Fundamentals</h3>
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: `${getProgressPercentage()}%` }}></div>
+                  </div>
+                  <div className="progress-indicator">
+                    Question {currentQuestion + 1} of {questions.length} • {getProgressPercentage()}% Complete
+                  </div>
+                  <div className="category-badge">
+                    {getCurrentQuestion().category}
+                  </div>
+                </div>
+                
+                <Question
+                  question={getCurrentQuestion()}
+                  selectedAnswer={getSelectedAnswer()}
+                  showFeedback={showFeedback}
+                  onAnswerSelect={handleAnswerSelect}
+                  onNext={handleNextQuestion}
+                />
+              </div>
+            ) : (
+              <LevelCompletion 
+                badgeTitle="Clarity Seeker"
+                mentorName="Clarity Prime"
+                closingMessage="Clarity is your superpower. Carry it into every prompt, every build, every breakthrough."
+                shareable={true}
+                totalQuestions={questions.length}
+                levelTitle="Level 1 – Prompting Fundamentals"
+              />
+            )}
+          </>
         )}
       </div>
     </div>
