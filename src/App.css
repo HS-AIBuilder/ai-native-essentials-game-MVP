@@ -1,0 +1,217 @@
+.app {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.quiz-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.progress-indicator {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Prototype Banner Styles */
+.prototype-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Intro Message Styles */
+.intro-message {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro-message h2 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.intro-message p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* Question Styles */
+.question-container {
+  margin-bottom: 30px;
+}
+
+.question-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.option-button {
+  padding: 15px 20px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.option-button:hover {
+  border-color: #4facfe;
+  background-color: #f8f9ff;
+}
+
+.option-button.selected {
+  border-color: #4facfe;
+  background-color: #e3f2fd;
+}
+
+.option-button.correct {
+  border-color: #4caf50;
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.option-button.incorrect {
+  border-color: #f44336;
+  background-color: #ffeaea;
+  color: #c62828;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.feedback-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4facfe;
+}
+
+.feedback-text {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.next-button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.next-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Badge Styles */
+.badge-container {
+  text-align: center;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.badge-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.badge-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.badge-message {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 15px;
+  }
+  
+  .quiz-section {
+    padding: 20px;
+  }
+  
+  .question-title {
+    font-size: 18px;
+  }
+  
+  .option-button {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .intro-message h2 {
+    font-size: 20px;
+  }
+  
+  .badge-title {
+    font-size: 24px;
+  }
+  
+  .badge-icon {
+    font-size: 60px;
+  }
+} 
