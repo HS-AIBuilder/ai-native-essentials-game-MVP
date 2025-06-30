@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PrototypeBanner from './components/PrototypeBanner'
 import IntroMessage from './components/IntroMessage'
 import Question from './components/Question'
-import Badge from './components/Badge'
+import LevelCompletion from './components/LevelCompletion'
 import './App.css'
 
 // Level 1: Prompting Fundamentals - 20 Questions
@@ -682,7 +682,14 @@ function App() {
             />
           </div>
         ) : (
-          <Badge totalQuestions={questions.length} />
+          <LevelCompletion 
+            badgeTitle="Clarity Seeker"
+            mentorName="Clarity Prime"
+            closingMessage="Clarity is your superpower. Carry it into every prompt, every build, every breakthrough."
+            shareable={true}
+            totalQuestions={questions.length}
+            levelTitle="Level 1 – Prompting Fundamentals"
+          />
         )}
       </div>
     </div>
